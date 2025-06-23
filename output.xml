@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250623 14:59:34.216" rpa="false" schemaversion="3">
+<suite id="s1" name="Collet" source="/Users/angelashi/Documents/GitHub/robotapi/tests/collet.robot">
+<kw name="Create Session" library="RequestsLibrary" type="SETUP">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20250623 14:59:34.296" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250623 14:59:34.296" endtime="20250623 14:59:34.296"/>
+</kw>
+<test id="s1-t1" name="Get Request Test" line="9">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>google</arg>
+<arg>http://www.google.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20250623 14:59:34.296" level="INFO">Creating Session using : alias=google, url=http://www.google.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250623 14:59:34.296" endtime="20250623 14:59:34.296"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp_google}</var>
+<arg>google</arg>
+<arg>/</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20250623 14:59:34.446" level="INFO">GET Request : url=http://www.google.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20250623 14:59:34.446" level="INFO">GET Response : url=http://www.google.com/ 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Jun 2025 06:59:34 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=ISO-8859-1', 'Content-Security-Policy-Report-Only': "object-src 'none';base-uri 'self';script-src 'nonce-AKvcVLHRXoeaCc7FXUfYAg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp", 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Transfer-Encoding': 'chunked', 'Set-Cookie': 'AEC=AVh_V2jbWB7JCNw3C6Pcbm65H99Va8s_7rChl_31obYtl2cVB7MG0V_dnA; expires=Sat, 20-Dec-2025 06:59:34 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=525=KFA_IREXKAr7pDAzQzw4x3vCakvv6iFPtrd3if2fpMQThHbxVHJCVeqf5-e5P9SqkjFSwSSwtltJF2XNcctdimx_jRd3nQkwGQjzOBqruOsIKRHA7Q2fjtSUsNfFtAaoYLDIFY9cBeZ97u3QI3HUyr9rKuGGTfsEJSnjahxTalAPE2-nnQedZs9Lu4gDml34_lziCw-gbmcr8b81OQ; expires=Tue, 23-Dec-2025 06:59:34 GMT; path=/; domain=.google.com; HttpOnly'} 
+ body=&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="zh-TW"&gt;&lt;head&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce="AKvcVLHRXoeaCc7FXUfYAg"&gt;(function(){var _g={kEI:'VvtYaJTWFrifvr0PurfkkAk',kEXPI:'0,202792,52,10,2,610013,2887414,1101,538661,14112,159025,266577,94242,195802,5241681,36812643,25228681,46375,91893,14126,8928,48187,8036,6758,23878,9140,4599,328,6225,1116,63048,15049,8222,7413,30376,28339,48274,624,4051,1257,353,18880,8970,4614,5774,16302,492,10817,4719,11805,3261,2990,35,3420,2115,11369,2820,3892,4840,555,658,5025,3605,1082,10327,1737,4625,9161,121,5530,3819,649,15,3702,508,3,1487,2067,1247,945,3,985,485,1,3873,258,4,1475,1163,2656,394,622,1,756,2707,2,899,4,2,1614,539,4,640,402,80,7,1979,1032,1220,358,2270,5,3566,2157,1456,1373,24,422,299,5,23,614,2387,2747,2,4,1,266,75,6,1796,760,2517,238,432,27,3,1327,47,856,80,7,155,78,450,2,2355,1746,1854,402,370,471,1447,3,2,2,2,145,1186,647,35,594,712,494,1139,690,467,143,4,452,1437,2,355,479,118,251,576,933,399,96,712,589,857,931,3,3,1365,577,1384,163,1317,4,1121,1279,349,242,4,617,498,264,654,59,191,450,375,176,24,1,5,18,24,273,956,821,143,67,533,325,171,26,141,110,566,461,102,547,167,397,583,569,913,14,25,103,75,4,1153,138,1,350,264,18,153,155,280,212,73,428,166,56,230,597,639,39,24,708,531,26,40,348,1160,113,480,667,477,91,356,2127,2,9,1,12,3,285,2015,21246218,5,2992,4,2433,527,3,1272,35,168,2542,316,15,718,3425,2,1462,11,263,1980,10,389,64,551,73,61,891,3,176,52,10,41,156,36,840,648,262,6019774,2473307,474940',kBL:'_WqU',kOPI:89978449};(function(){var a;((a=window.google)==null?0:a.stvsc)?google.kEI=_g.kEI:window.google=_g;}).call(this);})();(function(){google.sn='webhp';google.kHL='zh-TW';})();(function(){
+var g=this||self;function k(){return window.google&amp;&amp;window.google.kOPI||null};var l,m=[];function n(a){for(var b;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return b||l}function p(a){for(var b=null;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return b}function q(a){/^http:/i.test(a)&amp;&amp;window.location.protocol==="https:"&amp;&amp;(google.ml&amp;&amp;google.ml(Error("a"),!1,{src:a,glmm:1}),a="");return a}
+function r(a,b,d,c,h){var e="";b.search("&amp;ei=")===-1&amp;&amp;(e="&amp;ei="+n(c),b.search("&amp;lei=")===-1&amp;&amp;(c=p(c))&amp;&amp;(e+="&amp;lei="+c));var f=b.search("&amp;cshid=")===-1&amp;&amp;a!=="slh";c="&amp;zx="+Date.now().toString();g._cshid&amp;&amp;f&amp;&amp;(c+="&amp;cshid="+g._cshid);(d=d())&amp;&amp;(c+="&amp;opi="+d);return"/"+(h||"gen_204")+"?atyp=i&amp;ct="+String(a)+"&amp;cad="+(b+e+c)};l=google.kEI;google.getEI=n;google.getLEI=p;google.ml=function(){return null};google.log=function(a,b,d,c,h,e){e=e===void 0?k:e;d||(d=r(a,b,e,c,h));if(d=q(d)){a=new Image;var f=m.length;m[f]=a;a.onerror=a.onload=a.onabort=function(){delete m[f]};a.src=d}};google.logUrl=function(a,b){b=b===void 0?k:b;return r("",a,b)};}).call(this);(function(){google.y={};google.sy=[];var d;(d=google).x||(d.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1});var e;(e=google).sx||(e.sx=function(a){google.sy.push(a)});google.lm=[];var f;(f=google).plm||(f.plm=function(a){google.lm.push.apply(google.lm,a)});google.lq=[];var g;(g=google).load||(g.load=function(a,b,c){google.lq.push([[a],b,c])});var h;(h=google).loadAll||(h.loadAll=function(a,b){google.lq.push([a,b])});google.bx=!1;var k;(k=google).lx||(k.lx=function(){});var l=[],m;(m=google).fce||(m.fce=function(a,b,c,n){l.push([a,b,c,n])});google.qce=l;}).call(this);google.f={};(function(){
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a=c==="1"||c==="q"&amp;&amp;!a.elements.q.value?!0:!1}else a=!1;a&amp;&amp;(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&amp;&amp;a!==document.documentElement;a=a.parentElement)if(a.tagName==="A"){a=a.getAttribute("data-nohref")==="1";break a}a=!1}a&amp;&amp;b.preventDefault()},!0);}).call(this);&lt;/script&gt;&lt;style&gt;#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
+&lt;/style&gt;&lt;style&gt;body,td,a,p,.h{font-family:sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#1967d2}em{color:#c5221f;font-style:normal;font-weight:normal}a em{text-decoration:underline}.lst{height:25px;width:496px}.gsfi,.lst{font:18px sans-serif}.gsfs{font:17px sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#681da8;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#1967d2}a:visited{color:#681da8}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#f8f9fa;border:solid 1px;border-color:#dadce0 #70757a #70757a #dadce0;height:30px}.lsbb{display:block}#WqQANb a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;color:#000;border:none;cursor:pointer;height:30px;margin:0;outline:0;font:15px sans-serif;vertical-align:top}.lsb:active{background:#dadce0}.lst:focus{outline:none}&lt;/style&gt;&lt;script nonce="AKvcVLHRXoeaCc7FXUfYAg"&gt;(function(){window.google.erd={jsr:1,bv:2241,de:true,dpf:'-UvcplPSEbJeMqyI0DWdN5xpvd2jGX7etuLBJboey7E'};
+var g=this||self;var k,l=(k=g.mei)!=null?k:1,m,p=(m=g.diel)!=null?m:0,q,r=(q=g.sdo)!=null?q:!0,t=0,u,w=google.erd,x=w.jsr;google.ml=function(a,b,d,n,e){e=e===void 0?2:e;b&amp;&amp;(u=a&amp;&amp;a.message);d===void 0&amp;&amp;(d={});d.cad="ple_"+google.ple+".aple_"+google.aple;if(google.dl)return google.dl(a,e,d,!0),null;b=d;if(x&lt;0){window.console&amp;&amp;console.error(a,b);if(x===-2)throw a;b=!1}else b=!a||!a.message||a.message==="Error loading script"||t&gt;=l&amp;&amp;!n?!1:!0;if(!b)return null;t++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&amp;ei="+b(google.kEI);google.kEXPI&amp;&amp;(c+="&amp;jexpid="+b(google.kEXPI));c+="&amp;srcpg="+b(google.sn)+"&amp;jsr="+b(w.jsr)+
+"&amp;bver="+b(w.bv);w.dpf&amp;&amp;(c+="&amp;dpf="+b(w.dpf));var f=a.lineNumber;f!==void 0&amp;&amp;(c+="&amp;line="+f);var h=a.fileName;h&amp;&amp;(h.indexOf("-extension:/")&gt;0&amp;&amp;(e=3),c+="&amp;script="+b(h),f&amp;&amp;h===window.location.href&amp;&amp;(f=document.documentElement.outerHTML.split("\n")[f],c+="&amp;cad="+b(f?f.substring(0,300):"No script found.")));google.ple&amp;&amp;google.ple===1&amp;&amp;(e=2);c+="&amp;jsel="+e;for(var v in d)c+="&amp;",c+=b(v),c+="=",c+=b(d[v]);c=c+"&amp;emsg="+b(a.name+": "+a.message);c=c+"&amp;jsst="+b(a.stack||"N/A");c.length&gt;=12288&amp;&amp;(c=c.substr(0,12288));a=c;n||google.log(0,"",a);return a};window.onerror=function(a,b,d,n,e){u!==a&amp;&amp;(a=e instanceof Error?e:Error(a),d===void 0||"lineNumber"in a||(a.lineNumber=d),b===void 0||"fileName"in a||(a.fileName=b),google.ml(a,!1,void 0,!1,a.name==="SyntaxError"||a.message.substring(0,11)==="SyntaxError"||a.message.indexOf("Script error")!==-1?3:p));u=null;r&amp;&amp;t&gt;=l&amp;&amp;(window.onerror=null)};})();&lt;/script&gt;&lt;/head&gt;&lt;body bgcolor="#fff"&gt;&lt;script nonce="AKvcVLHRXoeaCc7FXUfYAg"&gt;(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n &amp;&amp; window.n();if (document.images){new Image().src=src;}
+if (!iesg){document.f&amp;&amp;document.f.q.focus();document.gbqf&amp;&amp;document.gbqf.q.focus();}
+}
+})();&lt;/script&gt;&lt;div id="mngb"&gt;&lt;div id=gbar&gt;&lt;nobr&gt;&lt;b class=gb1&gt;&amp;#25628;&amp;#23563;&lt;/b&gt; &lt;a class=gb1 href="https://www.google.com/imghp?hl=zh-TW&amp;tab=wi"&gt;&amp;#22294;&amp;#29255;&lt;/a&gt; &lt;a class=gb1 href="http://maps.google.com.tw/maps?hl=zh-TW&amp;tab=wl"&gt;&amp;#22320;&amp;#22294;&lt;/a&gt; &lt;a class=gb1 href="https://play.google.com/?hl=zh-TW&amp;tab=w8"&gt;Play&lt;/a&gt; &lt;a class=gb1 href="https://www.youtube.com/?tab=w1"&gt;YouTube&lt;/a&gt; &lt;a class=gb1 href="https://news.google.com/?tab=wn"&gt;&amp;#26032;&amp;#32862;&lt;/a&gt; &lt;a class=gb1 href="https://mail.google.com/mail/?tab=wm"&gt;Gmail&lt;/a&gt; &lt;a class=gb1 href="https://drive.google.com/?tab=wo"&gt;&amp;#38642;&amp;#31471;&amp;#30828;&amp;#30879;&lt;/a&gt; &lt;a class=gb1 style="text-decoration:none" href="https://www.google.com.tw/intl/zh-TW/about/products?tab=wh"&gt;&lt;u&gt;&amp;#26356;&amp;#22810;&lt;/u&gt; &amp;raquo;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div id=guser width=100%&gt;&lt;nobr&gt;&lt;span id=gbn class=gbi&gt;&lt;/span&gt;&lt;span id=gbf class=gbf&gt;&lt;/span&gt;&lt;span id=gbe&gt;&lt;/span&gt;&lt;a href="http://www.google.com.tw/history/optout?hl=zh-TW" class=gb4&gt;&amp;#32178;&amp;#38913;&amp;#35352;&amp;#37636;&lt;/a&gt; | &lt;a  href="/preferences?hl=zh-TW" class=gb4&gt;&amp;#35373;&amp;#23450;&lt;/a&gt; | &lt;a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=zh-TW&amp;passive=true&amp;continue=http://www.google.com/&amp;ec=GAZAAQ" class=gb4&gt;&amp;#30331;&amp;#20837;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div class=gbh style=left:0&gt;&lt;/div&gt;&lt;div class=gbh style=right:0&gt;&lt;/div&gt;&lt;/div&gt;&lt;center&gt;&lt;br clear="all" id="lgpd"&gt;&lt;div id="XjhHGf"&gt;&lt;img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;form action="/search" name="f"&gt;&lt;table cellpadding="0" cellspacing="0"&gt;&lt;tr valign="top"&gt;&lt;td width="25%"&gt;&amp;nbsp;&lt;/td&gt;&lt;td align="center" nowrap=""&gt;&lt;input name="ie" value="ISO-8859-1" type="hidden"&gt;&lt;input value="zh-TW" name="hl" type="hidden"&gt;&lt;input name="source" type="hidden" value="hp"&gt;&lt;input name="biw" type="hidden"&gt;&lt;input name="bih" type="hidden"&gt;&lt;div class="ds" style="height:32px;margin:4px 0"&gt;&lt;input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Google &amp;#25628;&amp;#23563;" maxlength="2048" name="q" size="57"&gt;&lt;/div&gt;&lt;br style="line-height:0"&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" value="Google &amp;#25628;&amp;#23563;" name="btnG" type="submit"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class=... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20250623 14:59:34.448" level="INFO">${resp_google} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250623 14:59:34.297" endtime="20250623 14:59:34.448"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp_json}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20250623 14:59:35.056" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20250623 14:59:35.056" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Jun 2025 06:59:34 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Etag': 'W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"', 'Expires': '-1', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Pragma': 'no-cache', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=7%2FCncREn5q0m9hCuDlFx8UvtjTfDxh9twM%2FrA0TazsU%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1750483884"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=7%2FCncREn5q0m9hCuDlFx8UvtjTfDxh9twM%2FrA0TazsU%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1750483884"', 'Server': 'cloudflare', 'Vary': 'Origin, Accept-Encoding', 'Via': '2.0 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1750483897', 'Age': '5247', 'Cf-Cache-Status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '95421a7fbe54eb2e-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+} 
+ </msg>
+<msg timestamp="20250623 14:59:35.056" level="INFO">/Users/angelashi/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20250623 14:59:35.056" level="INFO">${resp_json} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250623 14:59:34.449" endtime="20250623 14:59:35.056"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp_google.reason}</arg>
+<arg>OK</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250623 14:59:35.056" endtime="20250623 14:59:35.057"/>
+</kw>
+<status status="PASS" starttime="20250623 14:59:34.296" endtime="20250623 14:59:35.057"/>
+</test>
+<test id="s1-t2" name="Post Request Test" line="18">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{data}</var>
+<arg>title=Robotframework requests</arg>
+<arg>body=This is a test!</arg>
+<arg>userId=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20250623 14:59:35.058" level="INFO">&amp;{data} = { title=Robotframework requests | body=This is a test! | userId=1 }</msg>
+<status status="PASS" starttime="20250623 14:59:35.058" endtime="20250623 14:59:35.058"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts</arg>
+<arg>json=${data}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20250623 14:59:35.279" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '78', 'Content-Type': 'application/json'} 
+ body=b'{"title": "Robotframework requests", "body": "This is a test!", "userId": "1"}' 
+ </msg>
+<msg timestamp="20250623 14:59:35.280" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 23 Jun 2025 06:59:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '99', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Location', 'Cache-Control': 'no-cache', 'Etag': 'W/"63-daIIVFzR7RBBdtxHXrQgXNh6uvc"', 'Expires': '-1', 'Location': 'https://jsonplaceholder.typicode.com/posts/101', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Pragma': 'no-cache', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=GBV9yud%2BBFGVxMzZZAOGE%2FtKhOmCa71uTlJuB1QGqTg%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1750661975"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=GBV9yud%2BBFGVxMzZZAOGE%2FtKhOmCa71uTlJuB1QGqTg%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1750661975"', 'Server': 'cloudflare', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Via': '2.0 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1750662026', 'Cf-Cache-Status': 'DYNAMIC', 'CF-RAY': '95421a8098d4eb2e-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "title": "Robotframework requests",
+  "body": "This is a test!",
+  "userId": "1",
+  "id": 101
+} 
+ </msg>
+<msg timestamp="20250623 14:59:35.280" level="INFO">/Users/angelashi/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20250623 14:59:35.280" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20250623 14:59:35.058" endtime="20250623 14:59:35.280"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>201</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20250623 14:59:35.281" endtime="20250623 14:59:35.282"/>
+</kw>
+<status status="PASS" starttime="20250623 14:59:35.057" endtime="20250623 14:59:35.282"/>
+</test>
+<status status="PASS" starttime="20250623 14:59:34.217" endtime="20250623 14:59:35.283"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Collet">Collet</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
