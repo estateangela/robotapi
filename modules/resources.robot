@@ -1,13 +1,15 @@
 *** Settings ***
 Documentation           This is a resource file.
 Library                 RequestsLibrary
-
-
-*** Variables ***
-${BASE_URL}     https://swapi.dev/api
+Resource                ../setting.robot
 
 *** Keywords ***
-Connect To Swapi and Get Status
+Connect To Swapi  
     Create Session    swapi    ${BASE_URL}
-    ${resp}=          Get Request    swapi    ${ENDPOINT}
+
+Get Status
+    ${resp}=          GET On Session    swapi    ${ENDPOINT}
     Status Should Be    200    ${resp}
+
+Get Json Value
+    ${json}=          Get Value From Json    ${resp.json()}
