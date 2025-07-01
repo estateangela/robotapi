@@ -1,123 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-07-01T14:33:47.386882" rpa="false" schemaversion="5">
-<suite id="s1" name="Request" source="/Users/angela/Downloads/robotapi/tests/request.robot">
-<test id="s1-t1" name="Get Planets List" line="11">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-07-01T15:33:18.871291" rpa="false" schemaversion="5">
+<suite id="s1" name="GetPeopleOne" source="/Users/angela/Downloads/robotapi/tests/GetPeopleOne.robot">
+<test id="s1-t1" name="Get People One" line="11">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-01T14:33:47.472006" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-07-01T15:33:18.956134" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>swapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-01T14:33:47.471922" elapsed="0.000164"/>
+<status status="PASS" start="2025-07-01T15:33:18.956054" elapsed="0.000175"/>
 </kw>
 <kw name="Get Request" owner="RequestsLibrary">
-<msg time="2025-07-01T14:33:47.472181" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2025-07-01T14:33:48.538525" level="INFO">GET Request : url=https://swapi.dev/api/planets/ 
- path_url=/api/planets/ 
+<msg time="2025-07-01T15:33:18.956320" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2025-07-01T15:33:19.995998" level="INFO">GET Request : url=https://swapi.dev/api/people/1/ 
+ path_url=/api/people/1/ 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-07-01T14:33:48.538896" level="INFO">GET Response : url=https://swapi.dev/api/planets/ 
+<msg time="2025-07-01T15:33:19.996303" level="INFO">GET Response : url=https://swapi.dev/api/people/1/ 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 06:33:48 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"bc01c94507d5dcf4829b239cde8748fb"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"count":60,"next":"https://swapi.dev/api/planets/?page=2","previous":null,"results":[{"name":"Tatooine","rotation_period":"23","orbital_period":"304","diameter":"10465","climate":"arid","gravity":"1 standard","terrain":"desert","surface_water":"1","population":"200000","residents":["https://swapi.dev/api/people/1/","https://swapi.dev/api/people/2/","https://swapi.dev/api/people/4/","https://swapi.dev/api/people/6/","https://swapi.dev/api/people/7/","https://swapi.dev/api/people/8/","https://swapi.dev/api/people/9/","https://swapi.dev/api/people/11/","https://swapi.dev/api/people/43/","https://swapi.dev/api/people/62/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-09T13:50:49.641000Z","edited":"2014-12-20T20:58:18.411000Z","url":"https://swapi.dev/api/planets/1/"},{"name":"Alderaan","rotation_period":"24","orbital_period":"364","diameter":"12500","climate":"temperate","gravity":"1 standard","terrain":"grasslands, mountains","surface_water":"40","population":"2000000000","residents":["https://swapi.dev/api/people/5/","https://swapi.dev/api/people/68/","https://swapi.dev/api/people/81/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:35:48.479000Z","edited":"2014-12-20T20:58:18.420000Z","url":"https://swapi.dev/api/planets/2/"},{"name":"Yavin IV","rotation_period":"24","orbital_period":"4818","diameter":"10200","climate":"temperate, tropical","gravity":"1 standard","terrain":"jungle, rainforests","surface_water":"8","population":"1000","residents":[],"films":["https://swapi.dev/api/films/1/"],"created":"2014-12-10T11:37:19.144000Z","edited":"2014-12-20T20:58:18.421000Z","url":"https://swapi.dev/api/planets/3/"},{"name":"Hoth","rotation_period":"23","orbital_period":"549","diameter":"7200","climate":"frozen","gravity":"1.1 standard","terrain":"tundra, ice caves, mountain ranges","surface_water":"100","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:39:13.934000Z","edited":"2014-12-20T20:58:18.423000Z","url":"https://swapi.dev/api/planets/4/"},{"name":"Dagobah","rotation_period":"23","orbital_period":"341","diameter":"8900","climate":"murky","gravity":"N/A","terrain":"swamp, jungles","surface_water":"8","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:42:22.590000Z","edited":"2014-12-20T20:58:18.425000Z","url":"https://swapi.dev/api/planets/5/"},{"name":"Bespin","rotation_period":"12","orbital_period":"5110","diameter":"118000","climate":"temperate","gravity":"1.5 (surface), 1 standard (Cloud City)","terrain":"gas giant","surface_water":"0","population":"6000000","residents":["https://swapi.dev/api/people/26/"],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:43:55.240000Z","edited":"2014-12-20T20:58:18.427000Z","url":"https://swapi.dev/api/planets/6/"},{"name":"Endor","rotation_period":"18","orbital_period":"402","diameter":"4900","climate":"temperate","gravity":"0.85 standard","terrain":"forests, mountains, lakes","surface_water":"8","population":"30000000","residents":["https://swapi.dev/api/people/30/"],"films":["https://swapi.dev/api/films/3/"],"created":"2014-12-10T11:50:29.349000Z","edited":"2014-12-20T20:58:18.429000Z","url":"https://swapi.dev/api/planets/7/"},{"name":"Naboo","rotation_period":"26","orbital_period":"312","diameter":"12120","climate":"temperate","gravity":"1 standard","terrain":"grassy hills, swamps, forests, mountains","surface_water":"12","population":"4500000000","residents":["https://swapi.dev/api/people/3/","https://swapi.dev/api/people/21/","https://swapi.dev/api/people/35/","https://swapi.dev/api/people/36/","https://swapi.dev/api/people/37/","https://swapi.dev/api/people/38/","https://swapi.dev/api/people/39/","https://swapi.dev/api/people/42/","https://swapi.dev/api/people/60/","https://swapi.dev/api/people/61/","https://swapi.dev/api/people/66/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:52:31.066000Z","edited":"2014-12-20T20:58:18.430000Z","url":"https://swapi.dev/api/planets/8/"},{"name":"Coruscant","rotation_period":"24","orbital_period":"368","diameter":"12240","climate":"temperate","gravity":"1 standard","terrain":"cityscape, mountains","surface_water":"unknown","population":"1000000000000","residents":["https://swapi.dev/api/people/34/","https://swapi.dev/api/people/55/","https://swapi.dev/api/people/74/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:54:13.921000Z","edited":"2014-12-20T20:58:18.432000Z","url":"https://swapi.dev/api/planets/9/"},{"name":"Kamino","rotation_period":"27","orbital_period":"463","diameter":"19720","climate":"temperate","gravity":"1 standard","terrain":"ocean","surface_water":"100","population":"1000000000","residents":["https://swapi.dev/api/people/22/","https://swapi.dev/api/people/72/","https://swapi.dev/api/people/73/"],"films":["https://swapi.dev/api/films/5/"],"created":"2014-12-10T12:45:06.577000Z","edited":"2014-12-20T20:58:18.434000Z","url":"https://swapi.dev/api/planets/10/"}]} 
+ headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 07:33:19 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"ee398610435c328f4d0a4e1b0d2f7bbc"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
+ body={"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/14/","https://swapi.dev/api/vehicles/30/"],"starships":["https://swapi.dev/api/starships/12/","https://swapi.dev/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.dev/api/people/1/"} 
  </msg>
-<msg time="2025-07-01T14:33:48.539195" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-01T15:33:19.996479" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-01T14:33:48.539513" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-01T15:33:19.996796" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>swapi</arg>
 <arg>${ENDPOINT}</arg>
 <doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<status status="PASS" start="2025-07-01T14:33:47.472168" elapsed="1.067421"/>
+<status status="PASS" start="2025-07-01T15:33:18.956307" elapsed="1.040554"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.540035" elapsed="0.000361"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${resp.url}</arg>
-<arg>${BASE_URL}${ENDPOINT}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.540715" elapsed="0.000742"/>
+<status status="PASS" start="2025-07-01T15:33:19.997328" elapsed="0.000542"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T14:33:48.566841" level="INFO">${json} = [60]</msg>
-<var>${json}</var>
+<msg time="2025-07-01T15:33:20.018135" level="INFO">${name} = ['Luke Skywalker']</msg>
+<var>${name}</var>
 <arg>${resp.json()}</arg>
-<arg>count</arg>
+<arg>name</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T14:33:48.541624" elapsed="0.025260"/>
+<status status="PASS" start="2025-07-01T15:33:19.998147" elapsed="0.020017"/>
 </kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${resp.json()}[count] &gt; 0</arg>
-<arg>Count should be greater than 0</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.567092" elapsed="0.000595"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>Luke Skywalker</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-01T15:33:20.018295" elapsed="0.000106"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T14:33:48.580257" level="INFO">${results} = [[{'name': 'Tatooine', 'rotation_period': '23', 'orbital_period': '304', 'diameter': '10465', 'climate': 'arid', 'gravity': '1 standard', 'terrain': 'desert', 'surface_water': '1', 'population': '2000...</msg>
-<var>${results}</var>
+<msg time="2025-07-01T15:33:20.028975" level="INFO">${height} = ['172']</msg>
+<var>${height}</var>
 <arg>${resp.json()}</arg>
-<arg>results</arg>
+<arg>height</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T14:33:48.567821" elapsed="0.012467"/>
+<status status="PASS" start="2025-07-01T15:33:20.018471" elapsed="0.010527"/>
 </kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>len(${results}) &gt; 0</arg>
-<arg>Results list should not be empty</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.580406" elapsed="0.000667"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${height}</arg>
+<arg>172</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-01T15:33:20.029099" elapsed="0.000086"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T14:33:48.590926" level="INFO">${first} = [{'name': 'Tatooine', 'rotation_period': '23', 'orbital_period': '304', 'diameter': '10465', 'climate': 'arid', 'gravity': '1 standard', 'terrain': 'desert', 'surface_water': '1', 'population': '20000...</msg>
-<var>${first}</var>
+<msg time="2025-07-01T15:33:20.038431" level="INFO">${mass} = ['77']</msg>
+<var>${mass}</var>
 <arg>${resp.json()}</arg>
-<arg>results[0]</arg>
+<arg>mass</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T14:33:48.581158" elapsed="0.009789"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-07-01T14:33:48.591118" level="INFO">Length is 885.</msg>
-<arg>${first}\[name]</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591031" elapsed="0.000107"/>
+<status status="PASS" start="2025-07-01T15:33:20.029245" elapsed="0.009205"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[name]</arg>
-<arg>Tatooine</arg>
+<arg>${mass}</arg>
+<arg>77</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591210" elapsed="0.000072"/>
+<status status="PASS" start="2025-07-01T15:33:20.038536" elapsed="0.000078"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[climate]</arg>
-<arg>arid</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591334" elapsed="0.000067"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[terrain]</arg>
-<arg>desert</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591449" elapsed="0.000057"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[surface_water]</arg>
-<arg>1</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591552" elapsed="0.000059"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[population]</arg>
-<arg>200000</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T14:33:48.591659" elapsed="0.000058"/>
-</kw>
-<doc>驗證 GET /planets/ 回傳星球列表：200、count、results 結構</doc>
-<status status="PASS" start="2025-07-01T14:33:47.471288" elapsed="1.120492"/>
+<doc>驗證 GET /people/1/ 回傳人物資料：200、name、gender、birth_year 結構</doc>
+<status status="PASS" start="2025-07-01T15:33:18.955417" elapsed="1.083271"/>
 </test>
-<status status="PASS" start="2025-07-01T14:33:47.387330" elapsed="1.204639"/>
+<status status="PASS" start="2025-07-01T15:33:18.871732" elapsed="1.167166"/>
 </suite>
 <statistics>
 <total>
@@ -126,10 +90,10 @@
 <tag>
 </tag>
 <suite>
-<stat name="Request" id="s1" pass="1" fail="0" skip="0">Request</stat>
+<stat name="GetPeopleOne" id="s1" pass="1" fail="0" skip="0">GetPeopleOne</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-07-01T14:33:47.472181" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2025-07-01T15:33:18.956320" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
 </errors>
 </robot>
