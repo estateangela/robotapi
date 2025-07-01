@@ -4,4 +4,10 @@ Library                 RequestsLibrary
 
 
 *** Variables ***
-${GITHUB_API_DOMAIN}    https://api.github.com
+${BASE_URL}     https://swapi.dev/api
+
+*** Keywords ***
+Connect To Swapi and Get Status
+    Create Session    swapi    ${BASE_URL}
+    ${resp}=          Get Request    swapi    ${ENDPOINT}
+    Status Should Be    200    ${resp}

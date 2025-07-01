@@ -2,6 +2,7 @@
 Library    RequestsLibrary
 Library    JSONLibrary
 Library    BuiltIn
+Resource    ../modules/resources.robot
 
 *** Variables ***
 ${BASE_URL}     https://swapi.dev/api
@@ -10,10 +11,8 @@ ${ENDPOINT}     /people/
 *** Test Cases ***
 Get People List
     [Documentation]    驗證 GET ${ENDPOINT} 回傳人物列表：200、count、results 結構
-    Create Session    swapi    ${BASE_URL}
+    Connect To Swapi and Get Status
     ${resp}=          Get Request    swapi    ${ENDPOINT}
-    Status Should Be    200    ${resp} 
-    Should Be Equal   ${resp.url}            ${BASE_URL}${ENDPOINT}
     ${json}=          Get Value From Json    ${resp.json()}    count
     Should Be True    ${resp.json()}[count] > 0    Count should be greater than 0
     ${results}=       Get Value From Json    ${resp.json()}    results
