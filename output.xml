@@ -1,385 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-07-01T17:35:35.671663" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests" source="/Users/angela/Downloads/robotapi/tests">
-<suite id="s1-s1" name="GetPeople" source="/Users/angela/Downloads/robotapi/tests/GetPeople.robot">
-<test id="s1-s1-t1" name="Get People List" line="12">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-07-02T09:58:39.460034" rpa="false" schemaversion="5">
+<suite id="s1" name="GetPeopleSearch" source="/Users/angela/Downloads/robotapi/tests/GetPeopleSearch.robot">
+<test id="s1-t1" name="Get People Search" line="13">
 <kw name="Connect To Swapi" owner="resources">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:35.759516" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-07-02T09:58:39.559182" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>swapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-01T17:35:35.759452" elapsed="0.000143"/>
+<status status="PASS" start="2025-07-02T09:58:39.559113" elapsed="0.000165"/>
 </kw>
-<status status="PASS" start="2025-07-01T17:35:35.759253" elapsed="0.000376"/>
+<status status="PASS" start="2025-07-02T09:58:39.558898" elapsed="0.000419"/>
 </kw>
 <kw name="Get Status" owner="resources">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:36.886641" level="INFO">GET Request : url=https://swapi.dev/api/people/ 
- path_url=/api/people/ 
+<msg time="2025-07-02T09:58:40.510156" level="INFO">GET Request : url=https://swapi.dev/api/people/?search=r2 
+ path_url=/api/people/?search=r2 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-07-01T17:35:36.886996" level="INFO">GET Response : url=https://swapi.dev/api/people/ 
+<msg time="2025-07-02T09:58:40.510301" level="INFO">GET Response : url=https://swapi.dev/api/people/?search=r2 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"b493126da505af6fec015ec116fec193"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"count":82,"next":"https://swapi.dev/api/people/?page=2","previous":null,"results":[{"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/14/","https://swapi.dev/api/vehicles/30/"],"starships":["https://swapi.dev/api/starships/12/","https://swapi.dev/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.dev/api/people/1/"},{"name":"C-3PO","height":"167","mass":"75","hair_color":"n/a","skin_color":"gold","eye_color":"yellow","birth_year":"112BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:10:51.357000Z","edited":"2014-12-20T21:17:50.309000Z","url":"https://swapi.dev/api/people/2/"},{"name":"R2-D2","height":"96","mass":"32","hair_color":"n/a","skin_color":"white, blue","eye_color":"red","birth_year":"33BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/8/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:11:50.376000Z","edited":"2014-12-20T21:17:50.311000Z","url":"https://swapi.dev/api/people/3/"},{"name":"Darth Vader","height":"202","mass":"136","hair_color":"none","skin_color":"white","eye_color":"yellow","birth_year":"41.9BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":["https://swapi.dev/api/starships/13/"],"created":"2014-12-10T15:18:20.704000Z","edited":"2014-12-20T21:17:50.313000Z","url":"https://swapi.dev/api/people/4/"},{"name":"Leia Organa","height":"150","mass":"49","hair_color":"brown","skin_color":"light","eye_color":"brown","birth_year":"19BBY","gender":"female","homeworld":"https://swapi.dev/api/planets/2/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/30/"],"starships":[],"created":"2014-12-10T15:20:09.791000Z","edited":"2014-12-20T21:17:50.315000Z","url":"https://swapi.dev/api/people/5/"},{"name":"Owen Lars","height":"178","mass":"120","hair_color":"brown, grey","skin_color":"light","eye_color":"blue","birth_year":"52BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":[],"created":"2014-12-10T15:52:14.024000Z","edited":"2014-12-20T21:17:50.317000Z","url":"https://swapi.dev/api/people/6/"},{"name":"Beru Whitesun lars","height":"165","mass":"75","hair_color":"brown","skin_color":"light","eye_color":"blue","birth_year":"47BBY","gender":"female","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":[],"created":"2014-12-10T15:53:41.121000Z","edited":"2014-12-20T21:17:50.319000Z","url":"https://swapi.dev/api/people/7/"},{"name":"R5-D4","height":"97","mass":"32","hair_color":"n/a","skin_color":"white, red","eye_color":"red","birth_year":"unknown","gender":"n/a","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:57:50.959000Z","edited":"2014-12-20T21:17:50.321000Z","url":"https://swapi.dev/api/people/8/"},{"name":"Biggs Darklighter","height":"183","mass":"84","hair_color":"black","skin_color":"light","eye_color":"brown","birth_year":"24BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/"],"species":[],"vehicles":[],"starships":["https://swapi.dev/api/starships/12/"],"created":"2014-12-10T15:59:50.509000Z","edited":"2014-12-20T21:17:50.323000Z","url":"https://swapi.dev/api/people/9/"},{"name":"Obi-Wan Kenobi","height":"182","mass":"77","hair_color":"auburn, white","skin_color":"fair","eye_color":"blue-gray","birth_year":"57BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/20/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/38/"],"starships":["https://swapi.dev/api/starships/48/","https://swapi.dev/api/starships/59/","https://swapi.dev/api/starships/64/","https://swapi.dev/api/starships/65/","https://swapi.dev/api/starships/74/"],"created":"2014-12-10T16:16:29.192000Z","edited":"2014-12-20T21:17:50.325000Z","url":"https://swapi.dev/api/people/10/"}]} 
+ headers={'Server': 'nginx/1.16.1', 'Date': 'Wed, 02 Jul 2025 01:58:40 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"104188839c0bb0de4d98122bdd288fcd"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
+ body={"count":1,"next":null,"previous":null,"results":[{"name":"R2-D2","height":"96","mass":"32","hair_color":"n/a","skin_color":"white, blue","eye_color":"red","birth_year":"33BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/8/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:11:50.376000Z","edited":"2014-12-20T21:17:50.311000Z","url":"https://swapi.dev/api/people/3/"}]} 
  </msg>
-<msg time="2025-07-01T17:35:36.887290" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-02T09:58:40.510372" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-01T17:35:36.887550" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-02T09:58:40.510514" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>swapi</arg>
 <arg>${ENDPOINT}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:35.759783" elapsed="1.127799"/>
+<status status="PASS" start="2025-07-02T09:58:39.559486" elapsed="0.951052"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-01T17:35:36.887943" elapsed="0.000313"/>
+<status status="PASS" start="2025-07-02T09:58:40.510694" elapsed="0.000221"/>
 </kw>
-<status status="PASS" start="2025-07-01T17:35:35.759699" elapsed="1.128645"/>
+<status status="PASS" start="2025-07-02T09:58:39.559397" elapsed="0.951579"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:37.413332" level="INFO">GET Request : url=https://swapi.dev/api/people/ 
- path_url=/api/people/ 
+<msg time="2025-07-02T09:58:40.815769" level="INFO">GET Request : url=https://swapi.dev/api/people/?search=r2 
+ path_url=/api/people/?search=r2 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-07-01T17:35:37.413588" level="INFO">GET Response : url=https://swapi.dev/api/people/ 
+<msg time="2025-07-02T09:58:40.816031" level="INFO">GET Response : url=https://swapi.dev/api/people/?search=r2 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:37 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"b493126da505af6fec015ec116fec193"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"count":82,"next":"https://swapi.dev/api/people/?page=2","previous":null,"results":[{"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/14/","https://swapi.dev/api/vehicles/30/"],"starships":["https://swapi.dev/api/starships/12/","https://swapi.dev/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.dev/api/people/1/"},{"name":"C-3PO","height":"167","mass":"75","hair_color":"n/a","skin_color":"gold","eye_color":"yellow","birth_year":"112BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:10:51.357000Z","edited":"2014-12-20T21:17:50.309000Z","url":"https://swapi.dev/api/people/2/"},{"name":"R2-D2","height":"96","mass":"32","hair_color":"n/a","skin_color":"white, blue","eye_color":"red","birth_year":"33BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/8/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:11:50.376000Z","edited":"2014-12-20T21:17:50.311000Z","url":"https://swapi.dev/api/people/3/"},{"name":"Darth Vader","height":"202","mass":"136","hair_color":"none","skin_color":"white","eye_color":"yellow","birth_year":"41.9BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":["https://swapi.dev/api/starships/13/"],"created":"2014-12-10T15:18:20.704000Z","edited":"2014-12-20T21:17:50.313000Z","url":"https://swapi.dev/api/people/4/"},{"name":"Leia Organa","height":"150","mass":"49","hair_color":"brown","skin_color":"light","eye_color":"brown","birth_year":"19BBY","gender":"female","homeworld":"https://swapi.dev/api/planets/2/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/30/"],"starships":[],"created":"2014-12-10T15:20:09.791000Z","edited":"2014-12-20T21:17:50.315000Z","url":"https://swapi.dev/api/people/5/"},{"name":"Owen Lars","height":"178","mass":"120","hair_color":"brown, grey","skin_color":"light","eye_color":"blue","birth_year":"52BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":[],"created":"2014-12-10T15:52:14.024000Z","edited":"2014-12-20T21:17:50.317000Z","url":"https://swapi.dev/api/people/6/"},{"name":"Beru Whitesun lars","height":"165","mass":"75","hair_color":"brown","skin_color":"light","eye_color":"blue","birth_year":"47BBY","gender":"female","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":[],"starships":[],"created":"2014-12-10T15:53:41.121000Z","edited":"2014-12-20T21:17:50.319000Z","url":"https://swapi.dev/api/people/7/"},{"name":"R5-D4","height":"97","mass":"32","hair_color":"n/a","skin_color":"white, red","eye_color":"red","birth_year":"unknown","gender":"n/a","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:57:50.959000Z","edited":"2014-12-20T21:17:50.321000Z","url":"https://swapi.dev/api/people/8/"},{"name":"Biggs Darklighter","height":"183","mass":"84","hair_color":"black","skin_color":"light","eye_color":"brown","birth_year":"24BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/"],"species":[],"vehicles":[],"starships":["https://swapi.dev/api/starships/12/"],"created":"2014-12-10T15:59:50.509000Z","edited":"2014-12-20T21:17:50.323000Z","url":"https://swapi.dev/api/people/9/"},{"name":"Obi-Wan Kenobi","height":"182","mass":"77","hair_color":"auburn, white","skin_color":"fair","eye_color":"blue-gray","birth_year":"57BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/20/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/38/"],"starships":["https://swapi.dev/api/starships/48/","https://swapi.dev/api/starships/59/","https://swapi.dev/api/starships/64/","https://swapi.dev/api/starships/65/","https://swapi.dev/api/starships/74/"],"created":"2014-12-10T16:16:29.192000Z","edited":"2014-12-20T21:17:50.325000Z","url":"https://swapi.dev/api/people/10/"}]} 
+ headers={'Server': 'nginx/1.16.1', 'Date': 'Wed, 02 Jul 2025 01:58:40 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"104188839c0bb0de4d98122bdd288fcd"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
+ body={"count":1,"next":null,"previous":null,"results":[{"name":"R2-D2","height":"96","mass":"32","hair_color":"n/a","skin_color":"white, blue","eye_color":"red","birth_year":"33BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/8/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:11:50.376000Z","edited":"2014-12-20T21:17:50.311000Z","url":"https://swapi.dev/api/people/3/"}]} 
  </msg>
-<msg time="2025-07-01T17:35:37.413879" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-02T09:58:40.816238" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-01T17:35:37.414192" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-02T09:58:40.816657" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>swapi</arg>
 <arg>${ENDPOINT}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:36.888511" elapsed="0.525736"/>
+<status status="PASS" start="2025-07-02T09:58:40.511082" elapsed="0.305717"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:37.439728" level="INFO">${json} = [82]</msg>
+<msg time="2025-07-02T09:58:40.843779" level="INFO">${json} = [{'name': 'R2-D2', 'height': '96', 'mass': '32', 'hair_color': 'n/a', 'skin_color': 'white, blue', 'eye_color': 'red', 'birth_year': '33BBY', 'gender': 'n/a', 'homeworld': 'https://swapi.dev/api/plane...</msg>
 <var>${json}</var>
-<arg>${resp.json()}</arg>
-<arg>count</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:37.414766" elapsed="0.025003"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${resp.json()}[count] &gt; 0</arg>
-<arg>Count should be greater than 0</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.440017" elapsed="0.000663"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:37.453122" level="INFO">${results} = [[{'name': 'Luke Skywalker', 'height': '172', 'mass': '77', 'hair_color': 'blond', 'skin_color': 'fair', 'eye_color': 'blue', 'birth_year': '19BBY', 'gender': 'male', 'homeworld': 'https://swapi.dev/a...</msg>
-<var>${results}</var>
-<arg>${resp.json()}</arg>
-<arg>results</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:37.440812" elapsed="0.012381"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>len(${results}) &gt; 0</arg>
-<arg>Results list should not be empty</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.453311" elapsed="0.000746"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:37.464081" level="INFO">${first} = [{'name': 'Luke Skywalker', 'height': '172', 'mass': '77', 'hair_color': 'blond', 'skin_color': 'fair', 'eye_color': 'blue', 'birth_year': '19BBY', 'gender': 'male', 'homeworld': 'https://swapi.dev/ap...</msg>
-<var>${first}</var>
 <arg>${resp.json()}</arg>
 <arg>results[0]</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:37.454141" elapsed="0.009961"/>
+<status status="PASS" start="2025-07-02T09:58:40.817302" elapsed="0.026526"/>
 </kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-07-01T17:35:37.464278" level="INFO">Length is 691.</msg>
-<arg>${first}\[name]</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.464192" elapsed="0.000106"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${json}\[name]</arg>
+<arg>R2</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-02T09:58:40.844039" elapsed="0.000189"/>
 </kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-07-01T17:35:37.464425" level="INFO">Length is 693.</msg>
-<arg>${first}\[gender]</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.464365" elapsed="0.000076"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-07-01T17:35:37.464545" level="INFO">Length is 697.</msg>
-<arg>${first}\[birth_year]</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.464489" elapsed="0.000073"/>
-</kw>
-<doc>驗證 GET /people/ 回傳人物列表：200、count、results 結構</doc>
-<status status="PASS" start="2025-07-01T17:35:35.758740" elapsed="1.705914"/>
+<doc>驗證 GET /people/?search=r2 搜尋人物列表：200、count、results 結構</doc>
+<status status="PASS" start="2025-07-02T09:58:39.558299" elapsed="1.286047"/>
 </test>
-<status status="PASS" start="2025-07-01T17:35:35.682032" elapsed="1.782845"/>
-</suite>
-<suite id="s1-s2" name="GetPeopleOne" source="/Users/angela/Downloads/robotapi/tests/GetPeopleOne.robot">
-<test id="s1-s2-t1" name="Get People One" line="12">
+<test id="s1-t2" name="Search no results" line="21">
 <kw name="Connect To Swapi" owner="resources">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:37.467388" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-07-02T09:58:40.845623" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>swapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-01T17:35:37.467323" elapsed="0.000150"/>
+<status status="PASS" start="2025-07-02T09:58:40.845526" elapsed="0.000231"/>
 </kw>
-<status status="PASS" start="2025-07-01T17:35:37.467207" elapsed="0.000303"/>
+<status status="PASS" start="2025-07-02T09:58:40.845362" elapsed="0.000479"/>
 </kw>
 <kw name="Get Status" owner="resources">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:38.544738" level="INFO">GET Request : url=https://swapi.dev/api/people/1/ 
- path_url=/api/people/1/ 
+<msg time="2025-07-02T09:58:41.981453" level="INFO">GET Request : url=https://swapi.dev/api/people/?search=r2 
+ path_url=/api/people/?search=r2 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-07-01T17:35:38.544966" level="INFO">GET Response : url=https://swapi.dev/api/people/1/ 
+<msg time="2025-07-02T09:58:41.981684" level="INFO">GET Response : url=https://swapi.dev/api/people/?search=r2 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:38 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"ee398610435c328f4d0a4e1b0d2f7bbc"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/14/","https://swapi.dev/api/vehicles/30/"],"starships":["https://swapi.dev/api/starships/12/","https://swapi.dev/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.dev/api/people/1/"} 
+ headers={'Server': 'nginx/1.16.1', 'Date': 'Wed, 02 Jul 2025 01:58:41 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"104188839c0bb0de4d98122bdd288fcd"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
+ body={"count":1,"next":null,"previous":null,"results":[{"name":"R2-D2","height":"96","mass":"32","hair_color":"n/a","skin_color":"white, blue","eye_color":"red","birth_year":"33BBY","gender":"n/a","homeworld":"https://swapi.dev/api/planets/8/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"species":["https://swapi.dev/api/species/2/"],"vehicles":[],"starships":[],"created":"2014-12-10T15:11:50.376000Z","edited":"2014-12-20T21:17:50.311000Z","url":"https://swapi.dev/api/people/3/"}]} 
  </msg>
-<msg time="2025-07-01T17:35:38.545125" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-02T09:58:41.982182" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-01T17:35:38.545431" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-02T09:58:41.982480" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>swapi</arg>
 <arg>${ENDPOINT}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:37.467666" elapsed="1.077815"/>
+<status status="PASS" start="2025-07-02T09:58:40.846185" elapsed="1.136353"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.545944" elapsed="0.000491"/>
+<status status="PASS" start="2025-07-02T09:58:41.982914" elapsed="0.000488"/>
 </kw>
-<status status="PASS" start="2025-07-01T17:35:37.467579" elapsed="1.078972"/>
+<status status="PASS" start="2025-07-02T09:58:40.846006" elapsed="1.137534"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:38.809220" level="INFO">GET Request : url=https://swapi.dev/api/people/1/ 
- path_url=/api/people/1/ 
+<msg time="2025-07-02T09:58:42.249423" level="INFO">GET Request : url=https://swapi.dev/api/people/?search=foobar 
+ path_url=/api/people/?search=foobar 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-07-01T17:35:38.809398" level="INFO">GET Response : url=https://swapi.dev/api/people/1/ 
+<msg time="2025-07-02T09:58:42.249670" level="INFO">GET Response : url=https://swapi.dev/api/people/?search=foobar 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:38 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"ee398610435c328f4d0a4e1b0d2f7bbc"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.dev/api/planets/1/","films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"species":[],"vehicles":["https://swapi.dev/api/vehicles/14/","https://swapi.dev/api/vehicles/30/"],"starships":["https://swapi.dev/api/starships/12/","https://swapi.dev/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.dev/api/people/1/"} 
+ headers={'Server': 'nginx/1.16.1', 'Date': 'Wed, 02 Jul 2025 01:58:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"4200165871240e4de02c79cbd62d9180"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
+ body={"count":0,"next":null,"previous":null,"results":[]} 
  </msg>
-<msg time="2025-07-01T17:35:38.809541" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-02T09:58:42.249823" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-01T17:35:38.809807" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-02T09:58:42.250136" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>swapi</arg>
-<arg>${ENDPOINT}</arg>
+<arg>${ENDPOINT_NO_RESULTS}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.546868" elapsed="0.262993"/>
+<status status="PASS" start="2025-07-02T09:58:41.983817" elapsed="0.266378"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:38.830764" level="INFO">${name} = ['Luke Skywalker']</msg>
-<var>${name}</var>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-02T09:58:42.251996" level="INFO">{'count': 0, 'next': None, 'previous': None, 'results': []}</msg>
 <arg>${resp.json()}</arg>
-<arg>name</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:38.810262" elapsed="0.020531"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${name}</arg>
-<arg>Luke Skywalker</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.830926" elapsed="0.000155"/>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-02T09:58:42.250668" elapsed="0.001423"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:38.842390" level="INFO">${height} = ['172']</msg>
-<var>${height}</var>
-<arg>${resp.json()}</arg>
-<arg>height</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:38.831245" elapsed="0.011173"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${height}</arg>
-<arg>172</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.842542" elapsed="0.000091"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:38.852314" level="INFO">${mass} = ['77']</msg>
-<var>${mass}</var>
-<arg>${resp.json()}</arg>
-<arg>mass</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:38.842702" elapsed="0.009633"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${mass}</arg>
-<arg>77</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.852434" elapsed="0.000080"/>
-</kw>
-<doc>驗證 GET /people/1/ 回傳人物資料：200、name、gender、birth_year 結構</doc>
-<status status="PASS" start="2025-07-01T17:35:37.466603" elapsed="1.385996"/>
-</test>
-<status status="PASS" start="2025-07-01T17:35:37.465066" elapsed="1.387659"/>
-</suite>
-<suite id="s1-s3" name="GetPlanetsList" source="/Users/angela/Downloads/robotapi/tests/GetPlanetsList.robot">
-<test id="s1-s3-t1" name="Get Planets List" line="12">
-<kw name="Connect To Swapi" owner="resources">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:38.854708" level="INFO">Creating Session using : alias=swapi, url=https://swapi.dev/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>swapi</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-01T17:35:38.854653" elapsed="0.000124"/>
-</kw>
-<status status="PASS" start="2025-07-01T17:35:38.854560" elapsed="0.000243"/>
-</kw>
-<kw name="Get Status" owner="resources">
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:39.897498" level="INFO">GET Request : url=https://swapi.dev/api/planets/ 
- path_url=/api/planets/ 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-07-01T17:35:39.897691" level="INFO">GET Response : url=https://swapi.dev/api/planets/ 
- status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:39 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"bc01c94507d5dcf4829b239cde8748fb"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"count":60,"next":"https://swapi.dev/api/planets/?page=2","previous":null,"results":[{"name":"Tatooine","rotation_period":"23","orbital_period":"304","diameter":"10465","climate":"arid","gravity":"1 standard","terrain":"desert","surface_water":"1","population":"200000","residents":["https://swapi.dev/api/people/1/","https://swapi.dev/api/people/2/","https://swapi.dev/api/people/4/","https://swapi.dev/api/people/6/","https://swapi.dev/api/people/7/","https://swapi.dev/api/people/8/","https://swapi.dev/api/people/9/","https://swapi.dev/api/people/11/","https://swapi.dev/api/people/43/","https://swapi.dev/api/people/62/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-09T13:50:49.641000Z","edited":"2014-12-20T20:58:18.411000Z","url":"https://swapi.dev/api/planets/1/"},{"name":"Alderaan","rotation_period":"24","orbital_period":"364","diameter":"12500","climate":"temperate","gravity":"1 standard","terrain":"grasslands, mountains","surface_water":"40","population":"2000000000","residents":["https://swapi.dev/api/people/5/","https://swapi.dev/api/people/68/","https://swapi.dev/api/people/81/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:35:48.479000Z","edited":"2014-12-20T20:58:18.420000Z","url":"https://swapi.dev/api/planets/2/"},{"name":"Yavin IV","rotation_period":"24","orbital_period":"4818","diameter":"10200","climate":"temperate, tropical","gravity":"1 standard","terrain":"jungle, rainforests","surface_water":"8","population":"1000","residents":[],"films":["https://swapi.dev/api/films/1/"],"created":"2014-12-10T11:37:19.144000Z","edited":"2014-12-20T20:58:18.421000Z","url":"https://swapi.dev/api/planets/3/"},{"name":"Hoth","rotation_period":"23","orbital_period":"549","diameter":"7200","climate":"frozen","gravity":"1.1 standard","terrain":"tundra, ice caves, mountain ranges","surface_water":"100","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:39:13.934000Z","edited":"2014-12-20T20:58:18.423000Z","url":"https://swapi.dev/api/planets/4/"},{"name":"Dagobah","rotation_period":"23","orbital_period":"341","diameter":"8900","climate":"murky","gravity":"N/A","terrain":"swamp, jungles","surface_water":"8","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:42:22.590000Z","edited":"2014-12-20T20:58:18.425000Z","url":"https://swapi.dev/api/planets/5/"},{"name":"Bespin","rotation_period":"12","orbital_period":"5110","diameter":"118000","climate":"temperate","gravity":"1.5 (surface), 1 standard (Cloud City)","terrain":"gas giant","surface_water":"0","population":"6000000","residents":["https://swapi.dev/api/people/26/"],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:43:55.240000Z","edited":"2014-12-20T20:58:18.427000Z","url":"https://swapi.dev/api/planets/6/"},{"name":"Endor","rotation_period":"18","orbital_period":"402","diameter":"4900","climate":"temperate","gravity":"0.85 standard","terrain":"forests, mountains, lakes","surface_water":"8","population":"30000000","residents":["https://swapi.dev/api/people/30/"],"films":["https://swapi.dev/api/films/3/"],"created":"2014-12-10T11:50:29.349000Z","edited":"2014-12-20T20:58:18.429000Z","url":"https://swapi.dev/api/planets/7/"},{"name":"Naboo","rotation_period":"26","orbital_period":"312","diameter":"12120","climate":"temperate","gravity":"1 standard","terrain":"grassy hills, swamps, forests, mountains","surface_water":"12","population":"4500000000","residents":["https://swapi.dev/api/people/3/","https://swapi.dev/api/people/21/","https://swapi.dev/api/people/35/","https://swapi.dev/api/people/36/","https://swapi.dev/api/people/37/","https://swapi.dev/api/people/38/","https://swapi.dev/api/people/39/","https://swapi.dev/api/people/42/","https://swapi.dev/api/people/60/","https://swapi.dev/api/people/61/","https://swapi.dev/api/people/66/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:52:31.066000Z","edited":"2014-12-20T20:58:18.430000Z","url":"https://swapi.dev/api/planets/8/"},{"name":"Coruscant","rotation_period":"24","orbital_period":"368","diameter":"12240","climate":"temperate","gravity":"1 standard","terrain":"cityscape, mountains","surface_water":"unknown","population":"1000000000000","residents":["https://swapi.dev/api/people/34/","https://swapi.dev/api/people/55/","https://swapi.dev/api/people/74/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:54:13.921000Z","edited":"2014-12-20T20:58:18.432000Z","url":"https://swapi.dev/api/planets/9/"},{"name":"Kamino","rotation_period":"27","orbital_period":"463","diameter":"19720","climate":"temperate","gravity":"1 standard","terrain":"ocean","surface_water":"100","population":"1000000000","residents":["https://swapi.dev/api/people/22/","https://swapi.dev/api/people/72/","https://swapi.dev/api/people/73/"],"films":["https://swapi.dev/api/films/5/"],"created":"2014-12-10T12:45:06.577000Z","edited":"2014-12-20T20:58:18.434000Z","url":"https://swapi.dev/api/planets/10/"}]} 
- </msg>
-<msg time="2025-07-01T17:35:39.898179" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-07-01T17:35:39.898441" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<var>${resp}</var>
-<arg>swapi</arg>
-<arg>${ENDPOINT}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:38.854941" elapsed="1.043540"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${resp}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-01T17:35:39.901481" elapsed="0.000561"/>
-</kw>
-<status status="PASS" start="2025-07-01T17:35:38.854863" elapsed="1.047316"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-01T17:35:40.194344" level="INFO">GET Request : url=https://swapi.dev/api/planets/ 
- path_url=/api/planets/ 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-07-01T17:35:40.194557" level="INFO">GET Response : url=https://swapi.dev/api/planets/ 
- status=200, reason=OK 
- headers={'Server': 'nginx/1.16.1', 'Date': 'Tue, 01 Jul 2025 09:35:40 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept, Cookie', 'X-Frame-Options': 'SAMEORIGIN', 'ETag': '"bc01c94507d5dcf4829b239cde8748fb"', 'Allow': 'GET, HEAD, OPTIONS', 'Strict-Transport-Security': 'max-age=15768000'} 
- body={"count":60,"next":"https://swapi.dev/api/planets/?page=2","previous":null,"results":[{"name":"Tatooine","rotation_period":"23","orbital_period":"304","diameter":"10465","climate":"arid","gravity":"1 standard","terrain":"desert","surface_water":"1","population":"200000","residents":["https://swapi.dev/api/people/1/","https://swapi.dev/api/people/2/","https://swapi.dev/api/people/4/","https://swapi.dev/api/people/6/","https://swapi.dev/api/people/7/","https://swapi.dev/api/people/8/","https://swapi.dev/api/people/9/","https://swapi.dev/api/people/11/","https://swapi.dev/api/people/43/","https://swapi.dev/api/people/62/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-09T13:50:49.641000Z","edited":"2014-12-20T20:58:18.411000Z","url":"https://swapi.dev/api/planets/1/"},{"name":"Alderaan","rotation_period":"24","orbital_period":"364","diameter":"12500","climate":"temperate","gravity":"1 standard","terrain":"grasslands, mountains","surface_water":"40","population":"2000000000","residents":["https://swapi.dev/api/people/5/","https://swapi.dev/api/people/68/","https://swapi.dev/api/people/81/"],"films":["https://swapi.dev/api/films/1/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:35:48.479000Z","edited":"2014-12-20T20:58:18.420000Z","url":"https://swapi.dev/api/planets/2/"},{"name":"Yavin IV","rotation_period":"24","orbital_period":"4818","diameter":"10200","climate":"temperate, tropical","gravity":"1 standard","terrain":"jungle, rainforests","surface_water":"8","population":"1000","residents":[],"films":["https://swapi.dev/api/films/1/"],"created":"2014-12-10T11:37:19.144000Z","edited":"2014-12-20T20:58:18.421000Z","url":"https://swapi.dev/api/planets/3/"},{"name":"Hoth","rotation_period":"23","orbital_period":"549","diameter":"7200","climate":"frozen","gravity":"1.1 standard","terrain":"tundra, ice caves, mountain ranges","surface_water":"100","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:39:13.934000Z","edited":"2014-12-20T20:58:18.423000Z","url":"https://swapi.dev/api/planets/4/"},{"name":"Dagobah","rotation_period":"23","orbital_period":"341","diameter":"8900","climate":"murky","gravity":"N/A","terrain":"swamp, jungles","surface_water":"8","population":"unknown","residents":[],"films":["https://swapi.dev/api/films/2/","https://swapi.dev/api/films/3/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:42:22.590000Z","edited":"2014-12-20T20:58:18.425000Z","url":"https://swapi.dev/api/planets/5/"},{"name":"Bespin","rotation_period":"12","orbital_period":"5110","diameter":"118000","climate":"temperate","gravity":"1.5 (surface), 1 standard (Cloud City)","terrain":"gas giant","surface_water":"0","population":"6000000","residents":["https://swapi.dev/api/people/26/"],"films":["https://swapi.dev/api/films/2/"],"created":"2014-12-10T11:43:55.240000Z","edited":"2014-12-20T20:58:18.427000Z","url":"https://swapi.dev/api/planets/6/"},{"name":"Endor","rotation_period":"18","orbital_period":"402","diameter":"4900","climate":"temperate","gravity":"0.85 standard","terrain":"forests, mountains, lakes","surface_water":"8","population":"30000000","residents":["https://swapi.dev/api/people/30/"],"films":["https://swapi.dev/api/films/3/"],"created":"2014-12-10T11:50:29.349000Z","edited":"2014-12-20T20:58:18.429000Z","url":"https://swapi.dev/api/planets/7/"},{"name":"Naboo","rotation_period":"26","orbital_period":"312","diameter":"12120","climate":"temperate","gravity":"1 standard","terrain":"grassy hills, swamps, forests, mountains","surface_water":"12","population":"4500000000","residents":["https://swapi.dev/api/people/3/","https://swapi.dev/api/people/21/","https://swapi.dev/api/people/35/","https://swapi.dev/api/people/36/","https://swapi.dev/api/people/37/","https://swapi.dev/api/people/38/","https://swapi.dev/api/people/39/","https://swapi.dev/api/people/42/","https://swapi.dev/api/people/60/","https://swapi.dev/api/people/61/","https://swapi.dev/api/people/66/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:52:31.066000Z","edited":"2014-12-20T20:58:18.430000Z","url":"https://swapi.dev/api/planets/8/"},{"name":"Coruscant","rotation_period":"24","orbital_period":"368","diameter":"12240","climate":"temperate","gravity":"1 standard","terrain":"cityscape, mountains","surface_water":"unknown","population":"1000000000000","residents":["https://swapi.dev/api/people/34/","https://swapi.dev/api/people/55/","https://swapi.dev/api/people/74/"],"films":["https://swapi.dev/api/films/3/","https://swapi.dev/api/films/4/","https://swapi.dev/api/films/5/","https://swapi.dev/api/films/6/"],"created":"2014-12-10T11:54:13.921000Z","edited":"2014-12-20T20:58:18.432000Z","url":"https://swapi.dev/api/planets/9/"},{"name":"Kamino","rotation_period":"27","orbital_period":"463","diameter":"19720","climate":"temperate","gravity":"1 standard","terrain":"ocean","surface_water":"100","population":"1000000000","residents":["https://swapi.dev/api/people/22/","https://swapi.dev/api/people/72/","https://swapi.dev/api/people/73/"],"films":["https://swapi.dev/api/films/5/"],"created":"2014-12-10T12:45:06.577000Z","edited":"2014-12-20T20:58:18.434000Z","url":"https://swapi.dev/api/planets/10/"}]} 
- </msg>
-<msg time="2025-07-01T17:35:40.194829" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'swapi.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-07-01T17:35:40.195124" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<var>${resp}</var>
-<arg>swapi</arg>
-<arg>${ENDPOINT}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-01T17:35:39.902423" elapsed="0.292768"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:40.218416" level="INFO">${json} = [60]</msg>
-<var>${json}</var>
+<msg time="2025-07-02T09:58:42.274982" level="INFO">${count} = [0]</msg>
+<var>${count}</var>
 <arg>${resp.json()}</arg>
 <arg>count</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:40.195673" elapsed="0.022889"/>
+<status status="PASS" start="2025-07-02T09:58:42.252358" elapsed="0.022661"/>
 </kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${resp.json()}[count] &gt; 0</arg>
-<arg>Count should be greater than 0</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.218859" elapsed="0.000926"/>
+<kw name="Convert Json To String" owner="JSONLibrary">
+<msg time="2025-07-02T09:58:42.275353" level="INFO">${Count} = [0]</msg>
+<var>${Count}</var>
+<arg>${count}</arg>
+<doc>Convert JSON object to string</doc>
+<status status="PASS" start="2025-07-02T09:58:42.275200" elapsed="0.000171"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:40.233077" level="INFO">${results} = [[{'name': 'Tatooine', 'rotation_period': '23', 'orbital_period': '304', 'diameter': '10465', 'climate': 'arid', 'gravity': '1 standard', 'terrain': 'desert', 'surface_water': '1', 'population': '2000...</msg>
-<var>${results}</var>
-<arg>${resp.json()}</arg>
-<arg>results</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:40.219931" elapsed="0.013176"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${Count}</arg>
+<arg>[0]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-02T09:58:42.275469" elapsed="0.000116"/>
 </kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>len(${results}) &gt; 0</arg>
-<arg>Results list should not be empty</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.233258" elapsed="0.000930"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-07-01T17:35:40.244889" level="INFO">${first} = [{'name': 'Tatooine', 'rotation_period': '23', 'orbital_period': '304', 'diameter': '10465', 'climate': 'arid', 'gravity': '1 standard', 'terrain': 'desert', 'surface_water': '1', 'population': '20000...</msg>
-<var>${first}</var>
-<arg>${resp.json()}</arg>
-<arg>results[0]</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-07-01T17:35:40.234323" elapsed="0.010595"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-07-01T17:35:40.245184" level="INFO">Length is 885.</msg>
-<arg>${first}\[name]</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245072" elapsed="0.000133"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[name]</arg>
-<arg>Tatooine</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245278" elapsed="0.000071"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[climate]</arg>
-<arg>arid</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245403" elapsed="0.000064"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[terrain]</arg>
-<arg>desert</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245517" elapsed="0.000057"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[surface_water]</arg>
-<arg>1</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245622" elapsed="0.000064"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${first}\[population]</arg>
-<arg>200000</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-07-01T17:35:40.245737" elapsed="0.000056"/>
-</kw>
-<doc>驗證 GET /planets/ 回傳星球列表：200、count、results 結構</doc>
-<status status="PASS" start="2025-07-01T17:35:38.854046" elapsed="1.391810"/>
+<doc>驗證 GET /people/?search=foobar 搜尋人物列表：404、detail 結構</doc>
+<status status="PASS" start="2025-07-02T09:58:40.844550" elapsed="1.431128"/>
 </test>
-<status status="PASS" start="2025-07-01T17:35:38.852883" elapsed="1.393103"/>
-</suite>
-<status status="PASS" start="2025-07-01T17:35:35.672110" elapsed="4.574066"/>
+<status status="PASS" start="2025-07-02T09:58:39.460515" elapsed="2.815451"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
-<stat name="GetPeople" id="s1-s1" pass="1" fail="0" skip="0">Tests.GetPeople</stat>
-<stat name="GetPeopleOne" id="s1-s2" pass="1" fail="0" skip="0">Tests.GetPeopleOne</stat>
-<stat name="GetPlanetsList" id="s1-s3" pass="1" fail="0" skip="0">Tests.GetPlanetsList</stat>
+<stat name="GetPeopleSearch" id="s1" pass="2" fail="0" skip="0">GetPeopleSearch</stat>
 </suite>
 </statistics>
 <errors>
